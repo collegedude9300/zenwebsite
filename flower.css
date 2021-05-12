@@ -1,0 +1,55 @@
+:root {
+  --main-flower: #517bd6;
+  --stem: #51d691;
+}
+body {
+  background-color: #e0da29;
+}
+.flower {
+  position: absolute;
+}
+.flower__head {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--main-flower);
+  margin-top: 50px;
+}
+.flower__head::after, .flower__head::before {
+  content: '';
+  position: absolute;
+  background: var(--main-flower);
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  transform: rotate(60deg);
+}
+.flower__head::before {
+  transform: rotate(-60deg);
+}
+.flower__stem {
+  position: absolute;
+  height: 150px;
+  width: 8px;
+  background: var(--stem);
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.flower__leaf {
+  width: 30px;
+  height: 30px;
+  background: var(--stem);
+  position: absolute;
+  top: 130px;
+  left: 26px;
+  border-radius: 50px;
+  border-top-right-radius: 0;
+  transform: var(--transform-leaves-left);
+}
+.flower__leaf.oposite {
+  top: 150px;
+  left: 60px;
+  transform: var(--transform-leaves-right);
+}
